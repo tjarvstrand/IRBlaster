@@ -8,19 +8,23 @@ IRrecvPCI myReceiver(2);
 IRdecode myDecoder;
 IRsend mySender;
 
-const int GREEN_LED = 11;
-const int RED_LED = 12;
+const int GREEN_LED = 21;
 
 const char* READ_ACTION = "READ";
 const char* SEND_ACTION = "SEND";
 
 void setup() {
-  pinMode(YELLOW_LED, OUTPUT);
   pinMode(GREEN_LED, OUTPUT);
-  pinMode(RED_LED, OUTPUT);
   Serial.begin(9600);
+  while (!Serial) {
+    digitalWrite(GREEN_LED, HIGH);
+    delay(50);
+    digitalWrite(GREEN_LED, LOW);
+    delay(50);
+    ; // wait for serial port to connect. Needed for native USB
+  }
   digitalWrite(GREEN_LED, HIGH);
-  delay(2000);
+  delay(1000);
   digitalWrite(GREEN_LED, LOW);
 }
 
@@ -59,5 +63,11 @@ void send() {
   uint32_t code = strtoul(strtok(NULL, " "), NULL, 10);
   uint16_t bits = strtoul(strtok(NULL, " "), NULL, 10);
   mySender.send(protocol, code, bits);
-  Serial.println("OK");
+  Serial.print("OK ");
+  Serial.print(protocol,DEC);
+  Serial.print(" ");
+  Serial.print(code, DEC);
+  Serial.print(" ");
+  Serial.print(bits, DEC);
+  Serial.println();
 }
