@@ -9,5 +9,17 @@ DVD/LD    1 1587669015 32
 
 Projector
 ======
-power on  1 848397 32
-power off 1 815757 32
+power on    1 848397 32
+power off   1 815757 32
+toggle mute 1 796887 32
+volume up   1 803262 32
+volume down 1 835902 32
+
+projector on
+./ir-send.py /dev/ttyACM0 1 848397 32
+
+projector off
+./ir-send.py /dev/ttyACM0 1 815757 32; sleep 1; ./ir-send.py /dev/ttyACM0 1 815757 32
+
+stereo off-on
+./ir-send.py /dev/ttyACM0 1 1587640455 32; sleep 1; ./ir-send.py /dev/ttyACM0 1 1587656775 32
