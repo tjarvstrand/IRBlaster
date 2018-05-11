@@ -62,12 +62,20 @@ void send() {
   uint8_t protocol = strtoul(strtok(NULL, " "), NULL, 10);
   uint32_t code = strtoul(strtok(NULL, " "), NULL, 10);
   uint16_t bits = strtoul(strtok(NULL, " "), NULL, 10);
-  mySender.send(protocol, code, bits);
-  Serial.print("OK ");
-  Serial.print(protocol,DEC);
-  Serial.print(" ");
-  Serial.print(code, DEC);
-  Serial.print(" ");
-  Serial.print(bits, DEC);
-  Serial.println();
+  uint16_t times = strtoul(strtok(NULL, " "), NULL, 10);
+  uint16_t sleep = strtoul(strtok(NULL, " "), NULL, 10);
+  for(uint16_t i = 0; i < times; i++) {
+    if(i > 0) {
+      delay(sleep);
+    }
+    mySender.send(protocol, code, bits);
+  }
+  Serial.println("OK");
+  /* Serial.print("OK "); */
+  /* Serial.print(protocol,DEC); */
+  /* Serial.print(" "); */
+  /* Serial.print(code, DEC); */
+  /* Serial.print(" "); */
+  /* Serial.print(bits, DEC); */
+  /* Serial.println(); */
 }

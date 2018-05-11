@@ -1,0 +1,59 @@
+{
+  "codes": {
+    "stereo_volume_down": {
+      "protocol": 1,
+      "code": 1587664935,
+      "bits": 32
+    },
+    "stereo_volume_up": {
+      "protocol": 1,
+      "code": 1587632295,
+      "bits": 32
+    },
+    "stereo_power_on": {
+      "protocol": 1,
+      "code": 1587656775,
+      "bits": 32
+    },
+    "stereo_power_off": {
+      "protocol": 1,
+      "code": 1587640455,
+      "bits": 32
+    },
+    "stereo_input_cd": {
+      "protocol": 1,
+      "code": 1587652695,
+      "bits": 32
+    },
+    "stereo_input_dvd_ld": {
+      "protocol": 1,
+      "code": 1587669015,
+      "bits": 32
+    },
+    "projector_power_on": {
+      "protocol": 1,
+      "code": 848397,
+      "bits": 32
+    },
+    "projector_power_off": {
+      "protocol": 1,
+      "code": 815757,
+      "bits": 32
+    },
+    "projector_toggle_mute": {
+      "protocol": 1,
+      "code": 796887,
+      "bits": 32
+    },
+    "projector_volume_down": {
+      "protocol": 1,
+      "code": 803262,
+      "bits": 32
+    },
+    "projector_volume_up": {
+      "protocol": 1,
+      "code": 835902,
+      "bits": 32
+    }
+  }
+}
