@@ -1,12 +1,13 @@
 #!/usr/bin/env python
 
 import json
+import os
 import sys
 
 import ir_send
 
 def parse_codes(code_file):
-    with open(code_file) as f:
+    with open(os.path.join(os.path.dirname(__file__), code_file)) as f:
         return json.load(f)
 
 def main():
